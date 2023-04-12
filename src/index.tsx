@@ -5,6 +5,11 @@ import { store } from "./redux/store";
 import App from "./App";
 import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import mainTheme from "./styles/mainTheme";
+import colors from "./styles/colors";
+import GlobalStyles from "./styles/globalStyles";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { ThemeProvider } from "@mui/material";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -12,7 +17,12 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider theme={mainTheme}>
+        <StyledThemeProvider theme={colors}>
+          <GlobalStyles />
+          <App />
+        </StyledThemeProvider>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
