@@ -1,6 +1,10 @@
 name: Audit
 
-on: push
+on:
+  push:
+    paths-ignore:
+      - "README.md"
+      - "public/index.html"
 
 jobs:
   audit:
