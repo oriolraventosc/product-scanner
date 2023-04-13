@@ -1,5 +1,7 @@
+/* eslint-disable react/style-prop-object */
 import React from "react";
 import ButtonComponent from "./components/Button/Button";
+import ProductCard from "./components/ProductCard/ProductCard";
 
 function App() {
   return (
@@ -61,6 +63,10 @@ function App() {
         text="Add to favourites"
         // eslint-disable-next-line react/style-prop-object
         style={"button add"}
+      />
+      <ProductCard
+        image="https://newluxbrand.com/wp-content/uploads/2022/01/tortilla-de-patatas-Newlux-optimized.jpg"
+        name="Tortilla de patatas sin cebolla Classic' sin gluten sin lactosa"
       />
     </div>
   );
