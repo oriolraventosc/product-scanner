@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonComponent from "./components/Button/Button";
 
 function App() {
   return (
@@ -46,6 +47,21 @@ function App() {
           </a>
         </span>
       </header>
+      <ButtonComponent
+        text="Load more"
+        // eslint-disable-next-line react/style-prop-object
+        style={"button load-more"}
+      />
+      <ButtonComponent
+        text="Log in"
+        // eslint-disable-next-line react/style-prop-object
+        style={"button login-logout"}
+      />
+      <ButtonComponent
+        text="Add to favourites"
+        // eslint-disable-next-line react/style-prop-object
+        style={"button add"}
+      />
     </div>
   );
 }
