@@ -2,11 +2,13 @@
 import React from "react";
 import ButtonComponent from "./components/Button/Button";
 import ProductCard from "./components/ProductCard/ProductCard";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Navbar />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
