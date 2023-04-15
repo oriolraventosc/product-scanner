@@ -1,6 +1,6 @@
 /* eslint-disable react/style-prop-object */
 import sidebardata from "./SidebarData";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import NavbarStyled from "./NavbarStyled";
@@ -12,7 +12,6 @@ import ButtonComponent from "../Button/Button";
 const Navbar = (): JSX.Element => {
   const [sidebar, setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  const navigate = useNavigate();
   return (
     <NavbarStyled>
       <div className="mobile-tablet">
