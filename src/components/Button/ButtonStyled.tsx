@@ -16,11 +16,15 @@ const ButtonStyled = styled("div")`
     background-color: ${colors.dark};
   }
   .login-logout {
+    color: ${colors.dark};
     font-size: 1.1rem;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+  .login-logout:hover {
+    color: ${colors.main};
   }
   .add {
     padding-left: 2rem;
