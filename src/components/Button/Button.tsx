@@ -11,7 +11,12 @@ const ButtonComponent = ({ action, style, text }: ButtonProps): JSX.Element => {
   return (
     <>
       <ButtonStyled>
-        <Button variant="contained" onClick={action} className={style}>
+        <Button
+          variant="contained"
+          onClick={action}
+          className={style}
+          disableRipple
+        >
           {text}
         </Button>
       </ButtonStyled>

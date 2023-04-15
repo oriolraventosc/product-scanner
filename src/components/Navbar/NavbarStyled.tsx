@@ -6,7 +6,47 @@ const NavbarStyled = styled.section`
   align-items: center;
   justify-content: right;
   z-index: 8;
+  padding-top: 1.75rem;
+  padding-bottom: 2rem;
+  background-color: ${colors.dark};
+  width: 100vw;
+  left: -0.9rem;
+  height: 25px;
   position: relative;
+  .desktop {
+    display: none;
+  }
+  .mobile-tablet {
+    position: fixed;
+    background-color: ${colors.dark};
+    height: 93px;
+    display: flex;
+  }
+  .app-logo {
+    padding-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .app-logo_icon {
+    color: ${colors.main};
+  }
+  .app-logo_icon:hover {
+    color: #fff;
+    transition: 0.2s;
+  }
+  .app-logo_text {
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 0;
+    padding-top: 0.4rem;
+  }
+  .app-logo_text:hover {
+    color: ${colors.main};
+    transition: 0.2s;
+  }
   .navbar {
     background-color: #060b26;
     height: 80px;
@@ -17,8 +57,9 @@ const NavbarStyled = styled.section`
 
   .container-menu-bars {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
+    width: 100vw;
   }
 
   .menu-bars {
@@ -27,6 +68,7 @@ const NavbarStyled = styled.section`
     background: none;
     margin-top: 0.7rem;
     color: ${colors.main};
+    padding-right: 1rem;
   }
 
   .menu-bars-close {
@@ -109,6 +151,40 @@ const NavbarStyled = styled.section`
 
   span {
     margin-left: 16px;
+  }
+  @media (min-width: 814px) {
+    height: 50px;
+    left: -1rem;
+    .mobile-tablet {
+      display: none;
+    }
+    .desktop {
+      display: flex;
+      position: fixed;
+      background-color: ${colors.dark};
+      height: 120px;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .container-menu-bars {
+      width: 0;
+    }
+    .desktop-items {
+      position: relative;
+      padding-right: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      &_link {
+        color: #fff;
+      }
+      &_link:hover {
+        color: ${colors.main};
+        transition: 0.2s;
+      }
+    }
   }
 `;
 
