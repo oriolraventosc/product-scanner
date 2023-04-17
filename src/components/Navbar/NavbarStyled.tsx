@@ -10,8 +10,7 @@ const NavbarStyled = styled.section`
   padding-bottom: 2rem;
   background-color: ${colors.dark};
   width: 100vw;
-  left: -0.9rem;
-  height: 25px;
+  left: -1rem;
   position: relative;
   .desktop {
     display: none;
@@ -41,7 +40,7 @@ const NavbarStyled = styled.section`
     color: #fff;
     font-weight: bold;
     margin-left: 0;
-    padding-top: 0.4rem;
+    padding-top: 1.4rem;
   }
   .app-logo_text:hover {
     color: ${colors.main};
@@ -64,16 +63,16 @@ const NavbarStyled = styled.section`
 
   .menu-bars {
     margin-left: 2rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     background: none;
-    margin-top: 0.7rem;
+    margin-top: 1.7rem;
     color: ${colors.main};
     padding-right: 1rem;
   }
 
   .menu-bars-close {
     margin-left: 0rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     background: none;
     margin-top: 0.7rem;
     color: ${colors.main};
@@ -155,6 +154,9 @@ const NavbarStyled = styled.section`
   @media (min-width: 814px) {
     height: 50px;
     left: -1rem;
+    .app-logo_text {
+      padding-top: 0.4rem;
+    }
     .mobile-tablet {
       display: none;
     }
