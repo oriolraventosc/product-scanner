@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import colors from "../../styles/colors";
 
-const NavbarStyled = styled.section`
+const NavbarStyled = styled.header`
   display: flex;
   align-items: center;
   justify-content: right;
