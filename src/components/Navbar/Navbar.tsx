@@ -18,7 +18,7 @@ const Navbar = (): JSX.Element => {
         <article className="container-menu-bars">
           <div className="app-logo">
             <NavLink to="/" className="app-logo_icon">
-              <FlipIcon sx={{ fontSize: "2.5rem", pt: "0.4rem" }} />
+              <FlipIcon sx={{ fontSize: "2rem", pt: "1.4rem" }} />
             </NavLink>
             <NavLink to="/" className="app-logo_text">
               <Typography
@@ -29,8 +29,8 @@ const Navbar = (): JSX.Element => {
                     xl: "2.5rem",
                     lg: "1.3rem",
                     md: "2.5rem",
-                    sm: "2rem",
-                    xs: "2rem",
+                    sm: "1.8rem",
+                    xs: "1.8rem",
                   },
                   fontWeight: "regular",
                   display: "inline",
