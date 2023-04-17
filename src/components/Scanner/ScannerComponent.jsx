@@ -22,13 +22,12 @@ class ScannerComponent extends React.Component {
           disableFlip={false}
           qrCodeSuccessCallback={this.onNewScanResult}
         />
-        <p>{this.state.decodedResults}</p>
       </ScannerComponentStyled>
     );
   }
 
   onNewScanResult(decodedText, decodedResult) {
-    console.log("App [result]", decodedResult);
+    console.log(decodedText);
 
     // let decodedResults = this.state.decodedResults;
     // decodedResults.push(decodedResult);
