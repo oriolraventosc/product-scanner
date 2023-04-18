@@ -5,16 +5,17 @@ import { useAppDispatch } from "../../redux/hooks";
 
 const useProduct = () => {
   const dispatch = useAppDispatch();
+  const apiUrl = process.env.REACT_APP_URL_BASE;
   const loadProduct = useCallback(
     async (id: string) => {
-      const url = `https://scanner-api.onrender.com/product/${id}`;
+      const url = `${apiUrl}product/${id}`;
       try {
         const response = await axios.get(url);
         const apiResponse = response.data;
         dispatch(loadProductActionCreator(apiResponse.productInformation));
       } catch {}
     },
-    [dispatch]
+    [dispatch, apiUrl]
   );
   return { loadProduct };
 };
