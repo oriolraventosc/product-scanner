@@ -1,41 +1,30 @@
-import React from "react";
+/* eslint-disable react/style-prop-object */
 import ScannerFunctionality from "../Scanner/ScannerFunctionality";
 import ScannerComponentStyled from "./ScannerComponentStyled";
+import { useNavigate } from "react-router-dom";
 
-class ScannerComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      decodedResults: [],
-    };
-
-    // This binding is necessary to make `this` work in the callback.
-    this.onNewScanResult = this.onNewScanResult.bind(this);
+const ScannerComponent = () => {
+  const navigate = useNavigate();
+  function onScanSuccess(decodedText, decodedResult) {
+    // Handle on success condition with the decoded text or result.
+    console.log(decodedText);
+    navigate(`/product/${decodedText}`);
   }
 
-  render() {
-    return (
-      <ScannerComponentStyled>
+  return (
+    <ScannerComponentStyled>
+      {" "}
+      <div id="reader">
+        {" "}
         <ScannerFunctionality
           fps={10}
           qrbox={250}
           disableFlip={false}
-          qrCodeSuccessCallback={this.onNewScanResult}
+          qrCodeSuccessCallback={onScanSuccess}
         />
-      </ScannerComponentStyled>
-    );
-  }
-
-  onNewScanResult(decodedText, decodedResult) {
-    console.log(decodedText);
-
-    // let decodedResults = this.state.decodedResults;
-    // decodedResults.push(decodedResult);
-    this.setState((state, props) => {
-      state.decodedResults.push(decodedResult);
-      return state;
-    });
-  }
-}
+      </div>
+    </ScannerComponentStyled>
+  );
+};
 
 export default ScannerComponent;
