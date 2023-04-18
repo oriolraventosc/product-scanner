@@ -5,7 +5,6 @@ import { useAppDispatch } from "../../redux/hooks";
 
 const useProduct = () => {
   const dispatch = useAppDispatch();
-  const apiUrl = process.env.REACT_APP_URL;
   const loadProduct = useCallback(
     async (id: string) => {
       const url = `https://scanner-api.onrender.com/product/${id}`;
@@ -15,7 +14,7 @@ const useProduct = () => {
         dispatch(loadProductActionCreator(apiResponse.productInformation));
       } catch {}
     },
-    [apiUrl, dispatch]
+    [dispatch]
   );
   return { loadProduct };
 };
