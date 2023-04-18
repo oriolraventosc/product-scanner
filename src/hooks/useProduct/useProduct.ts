@@ -8,7 +8,7 @@ const useProduct = () => {
   const apiUrl = process.env.REACT_APP_URL;
   const loadProduct = useCallback(
     async (id: string) => {
-      const url = `${apiUrl}product/${id}`;
+      const url = `https://scanner-api.onrender.com/product/${id}`;
       try {
         const response = await axios.get(url);
         const apiResponse = response.data;
