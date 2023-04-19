@@ -3,6 +3,7 @@ export interface Product {
   image: string;
   ingredients: string;
   brand: string[];
+  description: string;
   weight: number;
   benefits: string[];
   ean: string;

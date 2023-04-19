@@ -24,6 +24,7 @@ const ProductPage = (): JSX.Element => {
         ingredients={product.ingredients}
         weight={product.weight}
         status={product.status}
+        description={product.description}
       />
     </>
   );
