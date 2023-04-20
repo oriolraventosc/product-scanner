@@ -2,7 +2,6 @@
 import { Button, Typography } from "@mui/material";
 import { Product } from "../../types/types";
 import ProductInformationStyled from "./ProductInformationStyled";
-import ButtonComponent from "../Button/Button";
 
 const ProductInformation = (product: Product): JSX.Element => {
   return (
