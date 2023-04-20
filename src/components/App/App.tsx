@@ -6,13 +6,15 @@ import ProductPage from "../../pages/ProductPage/ProductPage";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/home" element={<Homepage />} />
-        <Route path="/" element={<Navigate to={"/home"} />} />
-        <Route path="/product/:id" element={<ProductPage />} />
-      </Routes>
-    </div>
+    <>
+      <div className="App">
+        <Routes>
+          <Route path="/home" element={<Homepage />} />
+          <Route path="/" element={<Navigate to={"/home"} />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
