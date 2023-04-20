@@ -48,6 +48,9 @@ const ButtonStyled = styled("div")`
     background-color: ${colors.main};
     color: ${colors.dark};
   }
+  .mobile {
+    display: none;
+  }
 `;
 
 export default ButtonStyled;

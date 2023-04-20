@@ -151,9 +151,12 @@ const NavbarStyled = styled.header`
   span {
     margin-left: 16px;
   }
-  @media (min-width: 814px) {
+  @media (min-width: 1024px) {
     height: 50px;
     left: -1rem;
+    .app-logo {
+      padding-left: 4rem;
+    }
     .app-logo_text {
       padding-top: 0.4rem;
     }
@@ -174,7 +177,7 @@ const NavbarStyled = styled.header`
     }
     .desktop-items {
       position: relative;
-      padding-right: 1rem;
+      padding-right: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;

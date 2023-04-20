@@ -1,5 +1,5 @@
 /* eslint-disable react/style-prop-object */
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Product } from "../../types/types";
 import ProductInformationStyled from "./ProductInformationStyled";
 import ButtonComponent from "../Button/Button";
@@ -10,47 +10,66 @@ const ProductInformation = (product: Product): JSX.Element => {
       <ProductInformationStyled className="product-information">
         <div className="product-information-header">
           <img src={product.image} alt={product.name} />
-          <Typography
-            variant="h2"
-            className="product-information-header_name"
-            sx={{
-              fontSize: {
-                xxl: "2rem",
-                xl: "2rem",
-                lg: "2rem",
-                md: "2rem",
-                sm: "2rem",
-                xs: "2rem",
-              },
-              fontWeight: "700",
-              color: "primary.dark",
-              textAlign: "center",
-              pt: "1rem",
-            }}
-          >
-            {product.name}
-          </Typography>
-          <Typography
-            variant="body2"
-            className="product-information-header_description"
-            sx={{
-              fontSize: {
-                xxl: "1.5rem",
-                xl: "1.5rem",
-                lg: "1.5rem",
-                md: "1.5rem",
-                sm: "1.5rem",
-                xs: "1.5rem",
-              },
-              fontWeight: "500",
-              color: "primary.dark",
-              textAlign: "center",
-              pt: "0.5rem",
-            }}
-          >
-            {product.description}
-          </Typography>
-          <ButtonComponent text="Add to favourites" style="button add" />
+          <article className="product-information-header_main-info">
+            <Typography
+              variant="h2"
+              className="product-information-header_name"
+              sx={{
+                fontSize: {
+                  xxl: "2rem",
+                  xl: "2rem",
+                  lg: "2rem",
+                  md: "2rem",
+                  sm: "2rem",
+                  xs: "2rem",
+                },
+                fontWeight: "700",
+                color: "primary.dark",
+                textAlign: "center",
+                pt: "1rem",
+              }}
+            >
+              {product.name}
+            </Typography>
+            <Typography
+              variant="body2"
+              className="product-information-header_description"
+              sx={{
+                fontSize: {
+                  xxl: "1.5rem",
+                  xl: "1.5rem",
+                  lg: "1.5rem",
+                  md: "1.5rem",
+                  sm: "1.5rem",
+                  xs: "1.5rem",
+                },
+                fontWeight: "500",
+                color: "primary.dark",
+                textAlign: "center",
+                pt: "0.5rem",
+              }}
+            >
+              {product.description}
+            </Typography>
+            <div className="button-desktop-container">
+              <Button
+                variant="contained"
+                className={"button-desktop add"}
+                disableRipple
+              >
+                Add to favourites
+              </Button>
+            </div>
+            <div className="button-mobile-container">
+              <Button
+                variant="contained"
+                className={"button-mobile add"}
+                disableRipple
+              >
+                Add to favourites
+              </Button>
+            </div>
+          </article>
         </div>
         <div className="product-information-details">
           <article className="product-information-details_ingredients">
@@ -69,8 +88,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                 fontWeight: "700",
                 color: "primary.dark",
                 textAlign: "left",
-                pt: "1.5rem",
-                pl: "1rem",
               }}
             >
               Ingredients
@@ -90,9 +107,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                 fontWeight: "500",
                 color: "primary.dark",
                 textAlign: "left",
-                pt: "0.5rem",
-                pl: "1rem",
-                pr: "1rem",
               }}
             >
               {product.ingredients}
@@ -114,8 +128,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                 fontWeight: "700",
                 color: "primary.dark",
                 textAlign: "left",
-                pt: "1.5rem",
-                pl: "1rem",
               }}
             >
               Brands
@@ -137,9 +149,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                   fontWeight: "500",
                   color: "primary.main",
                   textAlign: "left",
-                  pt: "0.5rem",
-                  pl: "1rem",
-                  pr: "1rem",
                 }}
               >
                 {brand}
@@ -162,8 +171,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                 fontWeight: "700",
                 color: "primary.dark",
                 textAlign: "left",
-                pt: "1.5rem",
-                pl: "1rem",
               }}
             >
               Measures
@@ -184,9 +191,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                 fontWeight: "500",
                 color: "primary.dark",
                 textAlign: "left",
-                pt: "0.5rem",
-                pl: "1rem",
-                pr: "1rem",
               }}
             >
               Net content: {product.weight}g
@@ -208,8 +212,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                 fontWeight: "700",
                 color: "primary.dark",
                 textAlign: "left",
-                pt: "1.5rem",
-                pl: "1rem",
               }}
             >
               Nutritional benefits
@@ -231,9 +233,6 @@ const ProductInformation = (product: Product): JSX.Element => {
                   fontWeight: "500",
                   color: "primary.dark",
                   textAlign: "left",
-                  pt: "0.5rem",
-                  pl: "1rem",
-                  pr: "1rem",
                 }}
               >
                 • {benefit}
