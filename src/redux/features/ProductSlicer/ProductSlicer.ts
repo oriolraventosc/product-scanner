@@ -11,6 +11,7 @@ export const ProductInitialState: ProductState = {
     name: "",
     image: "",
     ingredients: "",
+    description: "",
     brand: [""],
     weight: 0,
     benefits: [""],
