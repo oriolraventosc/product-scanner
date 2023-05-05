@@ -10,14 +10,14 @@ import {
 const useProduct = () => {
   const dispatch = useAppDispatch();
   const apiUrl = process.env.REACT_APP_URL_BASE;
-  const loadProduct = useCallback(
+  const loadProducts = useCallback(
     async (id: string) => {
-      const url = `${apiUrl}product/${id}`;
+      const url = `${apiUrl}product/search?name=${id}`;
       try {
         dispatch(openLoadingActionCreator());
         const response = await axios.get(url);
         const apiResponse = response.data;
-        dispatch(loadProductActionCreator(apiResponse.productInformation));
+        dispatch(loadProductActionCreator(apiResponse.productsList));
         dispatch(closeLoadingActionCreator());
       } catch {
         dispatch(closeLoadingActionCreator());
@@ -25,7 +25,7 @@ const useProduct = () => {
     },
     [dispatch, apiUrl]
   );
-  return { loadProduct };
+  return { loadProducts };
 };
 
 export default useProduct;

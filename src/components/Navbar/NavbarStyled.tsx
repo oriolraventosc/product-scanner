@@ -153,7 +153,7 @@ const NavbarStyled = styled.header`
   }
   @media (min-width: 1024px) {
     height: 50px;
-    left: -1rem;
+    left: -4rem;
     .app-logo {
       padding-left: 4rem;
     }

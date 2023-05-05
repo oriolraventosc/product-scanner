@@ -17,6 +17,8 @@ export const ProductInitialState: ProductState = {
     benefits: [""],
     ean: "",
     status: "",
+    sideEffects: "",
+    howToUse: "",
   },
   myProducts: [],
 };
@@ -25,13 +27,13 @@ const ProductSlice = createSlice({
   name: "product",
   initialState: ProductInitialState,
   reducers: {
-    loadProduct: (initialState, action: PayloadAction<Product>) => ({
+    loadProducts: (initialState, action: PayloadAction<Product[]>) => ({
       ...initialState,
-      product: { ...action.payload },
+      myProducts: [...action.payload],
     }),
   },
 });
 
 export const ProductReducer = ProductSlice.reducer;
 
-export const { loadProduct: loadProductActionCreator } = ProductSlice.actions;
+export const { loadProducts: loadProductActionCreator } = ProductSlice.actions;

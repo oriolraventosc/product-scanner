@@ -8,4 +8,6 @@ export const productMock = {
   benefits: [""],
   ean: "12345698700",
   status: "Healthy",
+  howToUse: "",
+  sideEffects: "",
 };
