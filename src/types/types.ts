@@ -8,4 +8,6 @@ export interface Product {
   benefits: string[];
   ean: string;
   status: string;
+  howToUse: string;
+  sideEffects: string;
 }

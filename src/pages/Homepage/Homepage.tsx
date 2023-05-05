@@ -1,11 +1,10 @@
 import Navbar from "../../components/Navbar/Navbar";
-import ScannerComponent from "../../components/Scanner/ScannerComponent";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 const Homepage = (): JSX.Element => {
   return (
     <>
-      <Navbar />
-      <ScannerComponent />
+      <Navbar /> <SearchBar />
     </>
   );
 };

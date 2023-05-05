@@ -25,5 +25,10 @@ body {
   padding-right: 1rem;
   padding-left: 1rem;
 }
+@media (min-width: 1024px) {
+  body {padding-right: 4rem;
+  padding-left: 4rem;}
+  
+}
 `;
 export default GlobalStyles;
