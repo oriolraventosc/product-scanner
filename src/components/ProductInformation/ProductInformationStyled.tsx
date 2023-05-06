@@ -108,6 +108,8 @@ const ProductInformationStyled = styled("section")`
     background-color: ${colors.dark};
   }
   @media (min-width: 1024px) {
+    position: relative;
+    left: -3rem;
     .button-mobile-container {
       display: none;
     }

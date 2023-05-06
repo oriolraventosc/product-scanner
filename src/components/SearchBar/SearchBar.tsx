@@ -4,8 +4,10 @@ import useProduct from "../../hooks/useProduct/useProduct";
 import { useAppSelector } from "../../redux/hooks";
 import { Typography } from "@mui/material";
 import NoResults from "../NoResults/NoResults";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = (): JSX.Element => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState("");
   const products = useAppSelector((state) => state.productActions.myProducts);
   const handleChangeProduct = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +36,11 @@ const SearchBar = (): JSX.Element => {
           {products.length > 0 && (
             <div className="products-list">
               {products.map((product, index) => (
-                <article className="products-list_item" key={index++}>
+                <article
+                  className="products-list_item"
+                  key={index++}
+                  onClick={() => navigate(`/product/${product.name}`)}
+                >
                   <img src={product.image} alt={product.name} />
                   <Typography
                     variant="h2"
