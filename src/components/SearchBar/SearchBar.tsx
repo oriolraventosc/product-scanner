@@ -3,6 +3,7 @@ import SearchBarStyled from "./SearchBarStyled";
 import useProduct from "../../hooks/useProduct/useProduct";
 import { useAppSelector } from "../../redux/hooks";
 import { Typography } from "@mui/material";
+import NoResults from "../NoResults/NoResults";
 
 const SearchBar = (): JSX.Element => {
   const [product, setProduct] = useState("");
@@ -29,33 +30,37 @@ const SearchBar = (): JSX.Element => {
             Search
           </button>
         </div>
-        <div className="products-list">
-          {products.length > 0 &&
-            products.map((product, index) => (
-              <article className="products-list_item" key={index++}>
-                <img src={product.image} alt={product.name} />
-                <Typography
-                  variant="h2"
-                  sx={{
-                    fontSize: {
-                      xxl: "2rem",
-                      xl: "2rem",
-                      lg: "2rem",
-                      md: "2rem",
-                      sm: "2rem",
-                      xs: "2rem",
-                    },
-                    fontWeight: "700",
-                    color: "primary.dark",
-                    textAlign: "center",
-                    pt: "1rem",
-                    pb: "1rem",
-                  }}
-                >
-                  {product.name.toUpperCase()}
-                </Typography>
-              </article>
-            ))}
+        <div className="products">
+          {products.length > 0 && (
+            <div className="products-list">
+              {products.map((product, index) => (
+                <article className="products-list_item" key={index++}>
+                  <img src={product.image} alt={product.name} />
+                  <Typography
+                    variant="h2"
+                    sx={{
+                      fontSize: {
+                        xxl: "2rem",
+                        xl: "2rem",
+                        lg: "2rem",
+                        md: "2rem",
+                        sm: "2rem",
+                        xs: "2rem",
+                      },
+                      fontWeight: "700",
+                      color: "primary.dark",
+                      textAlign: "center",
+                      pt: "1rem",
+                      pb: "1rem",
+                    }}
+                  >
+                    {product.name.toUpperCase()}
+                  </Typography>
+                </article>
+              ))}
+            </div>
+          )}
+          {products.length === 0 && <NoResults />}
         </div>
       </SearchBarStyled>
     </>
