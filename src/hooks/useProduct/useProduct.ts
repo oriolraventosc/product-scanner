@@ -1,5 +1,8 @@
 import axios from "axios";
-import { loadProductActionCreator } from "../../redux/features/ProductSlicer/ProductSlicer";
+import {
+  loadProductActionCreator,
+  loadProductInformationActionCreator,
+} from "../../redux/features/ProductSlicer/ProductSlicer";
 import { useCallback } from "react";
 import { useAppDispatch } from "../../redux/hooks";
 import {
@@ -25,7 +28,24 @@ const useProduct = () => {
     },
     [dispatch, apiUrl]
   );
-  return { loadProducts };
+  const loadProduct = useCallback(
+    async (id: string) => {
+      const url = `${apiUrl}product/${id}`;
+      try {
+        dispatch(openLoadingActionCreator());
+        const response = await axios.get(url);
+        const apiResponse = response.data;
+        dispatch(
+          loadProductInformationActionCreator(apiResponse.productInformation)
+        );
+        dispatch(closeLoadingActionCreator());
+      } catch {
+        dispatch(closeLoadingActionCreator());
+      }
+    },
+    [apiUrl, dispatch]
+  );
+  return { loadProducts, loadProduct };
 };
 
 export default useProduct;

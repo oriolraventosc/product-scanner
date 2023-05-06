@@ -28,7 +28,7 @@ const ProductInformation = (product: Product): JSX.Element => {
                 pt: "1rem",
               }}
             >
-              {product.name}
+              {product.name.toUpperCase()}
             </Typography>
             <Typography
               variant="body2"

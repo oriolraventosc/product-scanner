@@ -31,9 +31,16 @@ const ProductSlice = createSlice({
       ...initialState,
       myProducts: [...action.payload],
     }),
+    loadProduct: (initialState, action: PayloadAction<Product>) => ({
+      ...initialState,
+      product: { ...action.payload },
+    }),
   },
 });
 
 export const ProductReducer = ProductSlice.reducer;
 
-export const { loadProducts: loadProductActionCreator } = ProductSlice.actions;
+export const {
+  loadProducts: loadProductActionCreator,
+  loadProduct: loadProductInformationActionCreator,
+} = ProductSlice.actions;
